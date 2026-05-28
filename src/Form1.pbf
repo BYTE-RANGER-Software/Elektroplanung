@@ -1,4 +1,4 @@
-﻿; Form Designer for PureBasic - 6.21
+﻿; Form Designer for PureBasic - 6.40
 ; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
 
 ;
@@ -85,19 +85,19 @@ EndEnumeration
 
 UsePNGImageDecoder()
 
-Img_Form1_0 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\Icons.Bitmap_14.png")
-Img_Form1_1 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\Icons.Bitmap_4.png")
-Img_Form1_2 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_16.png")
-Img_Form1_3 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_17.png")
-Img_Form1_4 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_18.png")
-Img_Form1_5 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_20.png")
-Img_Form1_6 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_13.png")
-Img_Form1_7 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_0.png")
-Img_Form1_8 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_21.png")
-Img_Form1_9 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_22.png")
-Img_Form1_10 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_23.png")
-Img_Form1_11 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList1.Bitmap_24.png")
-Img_Form1_12 = LoadImage(#PB_Any,"C:\Users\thiemann\Documents\PureBasic\Projects\Elektroplanung\resources\ImageList2.Bitmap_3.png")
+Img_Form1_0 = LoadImage(#PB_Any,"..\resources\Icons.Bitmap_14.png")
+Img_Form1_1 = LoadImage(#PB_Any,"..\resources\Icons.Bitmap_4.png")
+Img_Form1_2 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_16.png")
+Img_Form1_3 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_17.png")
+Img_Form1_4 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_18.png")
+Img_Form1_5 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_20.png")
+Img_Form1_6 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_13.png")
+Img_Form1_7 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_0.png")
+Img_Form1_8 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_21.png")
+Img_Form1_9 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_22.png")
+Img_Form1_10 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_23.png")
+Img_Form1_11 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_24.png")
+Img_Form1_12 = LoadImage(#PB_Any,"..\resources\ImageList2.Bitmap_3.png")
 
 Declare ResizeGadgetsForm1()
 
@@ -188,7 +188,7 @@ Procedure OpenForm1(x = 0, y = 0, width = 919, height = 615)
   ButtonImageGadget(#Toolbar_8, 144, 3, 18, 18, ImageID(Img_Form1_9))
   ButtonImageGadget(#Toolbar_10, 162, 3, 18, 18, ImageID(Img_Form1_10))
   ButtonImageGadget(#Toolbar_11, 180, 3, 18, 18, ImageID(Img_Form1_11))
-  Text_0 = TextGadget(#PB_Any, 203, 4, 38, 18, "Stift", #PB_Text_Border)
+  Text_0 = TextGadget(#PB_Any, 203, 4, 38, 18, "Stift")
   SetGadgetColor(Text_0, #PB_Gadget_BackColor,RGB(255,255,255))
   ButtonImageGadget(#Toolbar_12, 244, 3, 18, 18, ImageID(Img_Form1_12))
   CloseGadgetList()
