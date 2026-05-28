@@ -7,9 +7,9 @@
 ; Event procedures need to be put in another source file.
 ;
 
-Global Text_0, PaintBox1
+Global Text_0, Combo_0, Text_1, Combo_1, PaintBox1
 
-Global Img_Form1_0, Img_Form1_1, Img_Form1_2, Img_Form1_3, Img_Form1_4, Img_Form1_5, Img_Form1_6, Img_Form1_7, Img_Form1_8, Img_Form1_9, Img_Form1_10, Img_Form1_11, Img_Form1_12
+Global Img_Form1_0, Img_Form1_1, Img_Form1_2, Img_Form1_3, Img_Form1_4, Img_Form1_5, Img_Form1_6, Img_Form1_7, Img_Form1_8, Img_Form1_9, Img_Form1_10, Img_Form1_11, Img_Form1_12, Img_Form1_13, Img_Form1_14, Img_Form1_15, Img_Form1_16, Img_Form1_17, Img_Form1_18, Img_Form1_19, Img_Form1_20, Img_Form1_21, Img_Form1_22, Img_Form1_23, Img_Form1_24, Img_Form1_25, Img_Form1_26, Img_Form1_27, Img_Form1_28
 
 Enumeration FormWindow
   #Form1
@@ -17,8 +17,8 @@ EndEnumeration
 
 Enumeration FormGadget
   #Container_0
-  #Toolbar_0
-  #Toolbar_1
+  #ToolButton4
+  #ToolButton5
   #Toolbar_2
   #Toolbar_3
   #Toolbar_4
@@ -27,11 +27,27 @@ Enumeration FormGadget
   #Toolbar_8
   #Toolbar_10
   #Toolbar_11
-  #Toolbar_12
+  #ToolButton7
+  #ToolButton10
+  #ToolButton11
+  #ToolButton12
+  #ToolButton13
+  #ToolButton14
+  #ToolButton38
   #Container_1
-  #ButtonImage_2
+  #ButtonImage_20
   #Container_2
   #ButtonImage_1
+  #ButtonImage_2
+  #ButtonImage_3
+  #ButtonImage_4
+  #ButtonImage_5
+  #ButtonImage_6
+  #ButtonImage_7
+  #ButtonImage_8
+  #ButtonImage_9
+  #ButtonImage_10
+  #ButtonImage_11
 EndEnumeration
 
 Enumeration FormMenu
@@ -98,6 +114,22 @@ Img_Form1_9 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_22.png")
 Img_Form1_10 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_23.png")
 Img_Form1_11 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_24.png")
 Img_Form1_12 = LoadImage(#PB_Any,"..\resources\ImageList2.Bitmap_3.png")
+Img_Form1_13 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_19.png")
+Img_Form1_14 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_38.png")
+Img_Form1_15 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_25.png")
+Img_Form1_16 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_28.png")
+Img_Form1_17 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_40.png")
+Img_Form1_18 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_41.png")
+Img_Form1_19 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_12.png")
+Img_Form1_20 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_1.png")
+Img_Form1_21 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_2.png")
+Img_Form1_22 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_3.png")
+Img_Form1_23 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_4.png")
+Img_Form1_24 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_5.png")
+Img_Form1_25 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_6.png")
+Img_Form1_26 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_36.png")
+Img_Form1_27 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_37.png")
+Img_Form1_28 = LoadImage(#PB_Any,"..\resources\ImageList1.Bitmap_35.png")
 
 Declare ResizeGadgetsForm1()
 
@@ -178,25 +210,49 @@ Procedure OpenForm1(x = 0, y = 0, width = 919, height = 615)
   MenuTitle("Hilfe")
   MenuItem(#FormMenu_HelpInfo, "Info")
   ContainerGadget(#Container_0, 0, 0, 919, 23, #PB_Container_Single)
-  ButtonImageGadget(#Toolbar_0, 18, 3, 18, 18, ImageID(Img_Form1_0))
-  ButtonImageGadget(#Toolbar_1, 36, 3, 18, 18, ImageID(Img_Form1_1))
-  ButtonImageGadget(#Toolbar_2, 54, 3, 18, 18, ImageID(Img_Form1_2))
-  ButtonImageGadget(#Toolbar_3, 72, 3, 18, 18, ImageID(Img_Form1_3))
-  ButtonImageGadget(#Toolbar_4, 90, 3, 18, 18, ImageID(Img_Form1_4))
-  ButtonImageGadget(#Toolbar_6, 108, 3, 18, 18, ImageID(Img_Form1_5))
-  ButtonImageGadget(#Toolbar_7, 126, 3, 18, 18, ImageID(Img_Form1_8))
-  ButtonImageGadget(#Toolbar_8, 144, 3, 18, 18, ImageID(Img_Form1_9))
-  ButtonImageGadget(#Toolbar_10, 162, 3, 18, 18, ImageID(Img_Form1_10))
-  ButtonImageGadget(#Toolbar_11, 180, 3, 18, 18, ImageID(Img_Form1_11))
-  Text_0 = TextGadget(#PB_Any, 203, 4, 38, 18, "Stift")
+  ButtonImageGadget(#ToolButton4, 0, 3, 18, 18, ImageID(Img_Form1_0))
+  GadgetToolTip(#ToolButton4, "Neues Projekt")
+  ButtonImageGadget(#ToolButton5, 18, 3, 18, 18, ImageID(Img_Form1_1))
+  GadgetToolTip(#ToolButton5, "Projekt laden")
+  ButtonImageGadget(#Toolbar_2, 36, 3, 18, 18, ImageID(Img_Form1_2))
+  ButtonImageGadget(#Toolbar_3, 54, 3, 18, 18, ImageID(Img_Form1_3))
+  ButtonImageGadget(#Toolbar_4, 72, 3, 18, 18, ImageID(Img_Form1_4))
+  ButtonImageGadget(#Toolbar_6, 90, 3, 18, 18, ImageID(Img_Form1_5))
+  ButtonImageGadget(#Toolbar_7, 108, 3, 18, 18, ImageID(Img_Form1_8))
+  ButtonImageGadget(#Toolbar_8, 126, 3, 18, 18, ImageID(Img_Form1_9))
+  ButtonImageGadget(#Toolbar_10, 144, 3, 18, 18, ImageID(Img_Form1_10))
+  ButtonImageGadget(#Toolbar_11, 162, 3, 18, 18, ImageID(Img_Form1_11))
+  Text_0 = TextGadget(#PB_Any, 180, 4, 38, 18, "Stift")
   SetGadgetColor(Text_0, #PB_Gadget_BackColor,RGB(255,255,255))
-  ButtonImageGadget(#Toolbar_12, 244, 3, 18, 18, ImageID(Img_Form1_12))
+  Combo_0 = ComboBoxGadget(#PB_Any, 218, 3, 76, 18)
+  ButtonImageGadget(#ToolButton7, 294, 3, 18, 18, ImageID(Img_Form1_12))
+  GadgetToolTip(#ToolButton7, "Neuer Stift")
+  ButtonImageGadget(#ToolButton10, 312, 3, 18, 18, ImageID(Img_Form1_13))
+  GadgetToolTip(#ToolButton10, "Vergrößern/Verkleinern")
+  Text_1 = TextGadget(#PB_Any, 330, 4, 74, 18, "Rasterfang")
+  SetGadgetColor(Text_1, #PB_Gadget_BackColor,RGB(255,255,255))
+  Combo_1 = ComboBoxGadget(#PB_Any, 404, 3, 36, 18)
+  ButtonImageGadget(#ToolButton11, 440, 3, 18, 18, ImageID(Img_Form1_14))
+  ButtonImageGadget(#ToolButton12, 458, 3, 18, 18, ImageID(Img_Form1_15))
+  ButtonImageGadget(#ToolButton13, 476, 3, 18, 18, ImageID(Img_Form1_16))
+  ButtonImageGadget(#ToolButton14, 494, 3, 18, 18, ImageID(Img_Form1_17))
+  ButtonImageGadget(#ToolButton38, 512, 3, 18, 18, ImageID(Img_Form1_18))
   CloseGadgetList()
   ContainerGadget(#Container_1, 0, 23, 919, 23, #PB_Container_Single)
-  ButtonImageGadget(#ButtonImage_2, 18, 3, 18, 18, ImageID(Img_Form1_6))
+  ButtonImageGadget(#ButtonImage_20, 18, 3, 18, 18, ImageID(Img_Form1_6))
   CloseGadgetList()
   ContainerGadget(#Container_2, 0, 45, 23, 536, #PB_Container_Single)
   ButtonImageGadget(#ButtonImage_1, 2, 6, 18, 18, ImageID(Img_Form1_7))
+  ButtonImageGadget(#ButtonImage_2, 2, 24, 18, 18, ImageID(Img_Form1_19))
+  ButtonImageGadget(#ButtonImage_3, 2, 42, 18, 18, ImageID(Img_Form1_20))
+  ButtonImageGadget(#ButtonImage_4, 2, 60, 18, 18, ImageID(Img_Form1_21))
+  ButtonImageGadget(#ButtonImage_5, 2, 78, 18, 18, ImageID(Img_Form1_22))
+  ButtonImageGadget(#ButtonImage_6, 2, 96, 18, 18, ImageID(Img_Form1_23))
+  ButtonImageGadget(#ButtonImage_7, 2, 114, 18, 18, ImageID(Img_Form1_24))
+  ButtonImageGadget(#ButtonImage_8, 2, 132, 18, 18, ImageID(Img_Form1_25))
+  ButtonImageGadget(#ButtonImage_9, 2, 150, 18, 18, ImageID(Img_Form1_26))
+  ButtonImageGadget(#ButtonImage_10, 2, 168, 18, 18, ImageID(Img_Form1_27))
+  ButtonImageGadget(#ButtonImage_11, 2, 186, 18, 18, ImageID(Img_Form1_28))
   CloseGadgetList()
   PaintBox1 = CanvasGadget(#PB_Any, 23, 45, 821, 536)
 EndProcedure
